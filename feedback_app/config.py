@@ -1,0 +1,17 @@
+import os
+
+DEFAULT_SECRET = os.getenv("SECRET_KEY", "change-this-secret")
+DEFAULT_JWT_SECRET = os.getenv("JWT_SECRET_KEY", DEFAULT_SECRET)
+
+
+class Config:
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URI", "sqlite:///feedback.db")
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = DEFAULT_SECRET
+    JWT_SECRET_KEY = DEFAULT_JWT_SECRET
+    ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "admin")
+    ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "123456")
+    PAGINATION_DEFAULT_PAGE = int(os.getenv("PAGINATION_DEFAULT_PAGE", "1"))
+    PAGINATION_DEFAULT_SIZE = int(os.getenv("PAGINATION_DEFAULT_SIZE", "10"))
+    PAGINATION_MAX_SIZE = int(os.getenv("PAGINATION_MAX_SIZE", "100"))
+
