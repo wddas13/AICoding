@@ -16,12 +16,18 @@ def create_app():
     app.register_blueprint(feedback_bp)
     app.register_blueprint(admin_bp)
     app.register_blueprint(task_bp)
+    
+    # 创建数据库表（如果不存在）
     with app.app_context():
         db.create_all()
+        print("✅ 数据库表初始化完成")
+    
     return app
 
 app = create_app()
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    # 本地开发环境
+    port = int(os.getenv("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=False)
 

@@ -1,0 +1,19 @@
+# Railway 环境变量配置模板
+# 将以下变量添加到 Railway 项目的 Variables 设置中
+
+# 数据库配置（Railway 自动提供）
+DATABASE_URI=${{Postgres.DATABASE_URL}}
+
+# 安全密钥（运行 python generate_keys.py 生成）
+SECRET_KEY=<运行 generate_keys.py 生成>
+JWT_SECRET_KEY=<运行 generate_keys.py 生成>
+
+# 管理员账号（必须修改密码）
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=<请设置强密码>
+
+# 分页配置（可选，不设置则使用默认值）
+PAGINATION_DEFAULT_PAGE=1
+PAGINATION_DEFAULT_SIZE=10
+PAGINATION_MAX_SIZE=100
+
