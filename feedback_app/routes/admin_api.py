@@ -26,9 +26,3 @@ def feedback_list():
     keyword = request.args.get("keyword") or None
     result = FeedbackService.list_feedback(page, size, keyword)
     return jsonify(result)
-
-app = create_app()
-
-@app.get("/health")
-def health():
-    return {"status": "ok"}, 200
