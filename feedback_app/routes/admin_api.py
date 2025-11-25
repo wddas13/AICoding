@@ -27,3 +27,8 @@ def feedback_list():
     result = FeedbackService.list_feedback(page, size, keyword)
     return jsonify(result)
 
+app = create_app()
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}, 200
