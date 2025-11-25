@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from services.task_service import TaskService
 
+from feedback_app.services import TaskService
 
 bp = Blueprint("task_api", __name__, url_prefix="/api")
 

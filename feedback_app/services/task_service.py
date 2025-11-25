@@ -1,5 +1,5 @@
-from extensions import db
-from models.task import Task
+from feedback_app.extensions import db
+from feedback_app.models import Task
 
 
 class TaskService:

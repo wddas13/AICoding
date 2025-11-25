@@ -1,9 +1,8 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
-from services.admin_service import AdminService
-from services.feedback_service import FeedbackService
-from utils.pagination import parse_pagination_args
 
+from feedback_app.services import AdminService, FeedbackService
+from feedback_app.utils import parse_pagination_args
 
 bp = Blueprint("admin_api", __name__, url_prefix="/admin")
 

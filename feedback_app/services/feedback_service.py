@@ -1,5 +1,5 @@
-from extensions import db
-from models.feedback import Feedback
+from feedback_app.extensions import db
+from feedback_app.models import Feedback
 
 
 class FeedbackService:

@@ -1,5 +1,6 @@
 from datetime import datetime
-from extensions import db
+
+from feedback_app.extensions import db
 
 
 class Feedback(db.Model):

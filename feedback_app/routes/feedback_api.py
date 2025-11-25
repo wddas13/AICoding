@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
-from services.feedback_service import FeedbackService
-from utils.validators import validate_feedback_payload
 
+from feedback_app.services import FeedbackService
+from feedback_app.utils import validate_feedback_payload
 
 bp = Blueprint("feedback_api", __name__, url_prefix="/api/feedback")
 
