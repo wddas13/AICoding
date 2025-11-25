@@ -17,6 +17,11 @@ def create_app():
     app.register_blueprint(admin_bp)
     app.register_blueprint(task_bp)
     
+    # 健康检查端点 (Railway 需要)
+    @app.route('/health')
+    def health_check():
+        return {'status': 'healthy', 'message': 'Service is running'}, 200
+    
     # 创建数据库表（如果不存在）
     with app.app_context():
         db.create_all()
